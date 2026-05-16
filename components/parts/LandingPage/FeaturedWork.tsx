@@ -10,7 +10,7 @@ export const FeaturedWork = () => {
         "We shaped beneficiary interviews into a concise impact film and supporting campaign cutdowns.",
       outcome:
         "Clearer stakeholder presentations and shareable assets for web and events.",
-      bg: "linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%)",
+      src: '/images/a picture of recording at one acre fund.png',
     },
     {
       tag: "Brand Film",
@@ -22,7 +22,7 @@ export const FeaturedWork = () => {
         "We built a message framework, filmed leadership content, and created launch videos.",
       outcome:
         "A sharper brand narrative and stronger trust across digital touchpoints.",
-      bg: "linear-gradient(135deg, #2d1b00 0%, #3d2a00 50%, #1a1000 100%)",
+      src: '/images/Recording Prof SAM YALA from AIMS.png',
     },
     {
       tag: "Photography",
@@ -34,7 +34,7 @@ export const FeaturedWork = () => {
         "We organized the story into a case-study format with hero visuals and short edits.",
       outcome:
         "A clean proof-of-impact package for partners, sponsors, and future participants.",
-      bg: "linear-gradient(135deg, #0a2e1a 0%, #163d2a 50%, #0f2a1a 100%)",
+      src: '/images/a picture of a big camera.png',
     },
   ];
 
@@ -66,7 +66,11 @@ export const FeaturedWork = () => {
             <div className="work-card-img">
               <div
                 className="work-card-img-inner"
-                style={{ background: w.bg }}
+                style={{
+                  backgroundImage: `url('${w.src}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               />
               <div className="work-tag">{w.tag}</div>
             </div>

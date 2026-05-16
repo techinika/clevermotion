@@ -6,37 +6,37 @@ export const Gallery = () => {
       label: "Documentary — Field Interviews",
       wide: false,
       tall: true,
-      bg: "linear-gradient(160deg,#1a2a3a,#0d1b2a)",
+      src: '/images/a thumbnail for Documentary Film - CLECAM EJO HEZA.png',
     },
     {
       label: "Conference — REMA Climate Summit",
       wide: true,
       tall: false,
-      bg: "linear-gradient(160deg,#2a1a1a,#3d0f0f)",
+      src: '/images/a thumbnail for Africa CEO Forum (ACF), Opening Video.png',
     },
     {
       label: "Portrait — Community Leaders",
       wide: false,
       tall: false,
-      bg: "linear-gradient(160deg,#1a2a1a,#0d2a10)",
+      src: '/images/a picture of us on video recording.png',
     },
     {
       label: "Corporate — Leadership Session",
       wide: false,
       tall: false,
-      bg: "linear-gradient(160deg,#2a2010,#3d2d00)",
+      src: '/images/Recording Prof SAM YALA from AIMS.png',
     },
     {
       label: "Event — Youth Entrepreneurship",
       wide: false,
       tall: true,
-      bg: "linear-gradient(160deg,#1a1a2a,#0d0d3d)",
+      src: '/images/a thumbnail for Aces Vaccine Symposium 2025.png',
     },
     {
       label: "Field — Agricultural Stories",
       wide: true,
       tall: false,
-      bg: "linear-gradient(160deg,#1a2a10,#2a3d00)",
+      src: '/images/a picture of recording at one acre fund.png',
     },
   ];
 
@@ -52,7 +52,11 @@ export const Gallery = () => {
           >
             <div
               className="gallery-item-inner"
-              style={{ background: item.bg }}
+              style={{
+                backgroundImage: `url('${item.src}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             />
             <div className="gallery-item-label">{item.label}</div>
           </div>
