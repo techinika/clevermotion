@@ -1,22 +1,32 @@
-export const FreeTools = () => {
-  const tools = [
-    {
-      icon: "📋",
-      title: "Impact Story Audit",
-      desc: "Score your current story for clarity, proof, emotion, and conversion readiness.",
-    },
-    {
-      icon: "📄",
-      title: "Storytelling Templates",
-      desc: "Reusable prompts for campaign stories, beneficiary stories, and partner updates.",
-    },
-    {
-      icon: "🎞️",
-      title: "Video Brief Template",
-      desc: "A structured brief to align objectives, audience, scenes, interviews, and deliverables.",
-    },
-  ];
+"use client";
 
+import { FileText, FileVideo, Download } from "lucide-react";
+
+interface Tool {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  desc: string;
+}
+
+const tools: Tool[] = [
+  {
+    icon: FileText,
+    title: "Impact Story Audit",
+    desc: "Score your current story for clarity, proof, emotion, and conversion readiness.",
+  },
+  {
+    icon: FileVideo,
+    title: "Storytelling Templates",
+    desc: "Reusable prompts for campaign stories, beneficiary stories, and partner updates.",
+  },
+  {
+    icon: FileVideo,
+    title: "Video Brief Template",
+    desc: "A structured brief to align objectives, audience, scenes, interviews, and deliverables.",
+  },
+];
+
+export const FreeTools = () => {
   return (
     <section id="tools">
       <div className="tools-grid">
@@ -32,27 +42,15 @@ export const FreeTools = () => {
           {tools.map((t) => (
             <div key={t.title} className="tool-item">
               <div className="tool-item-left">
-                <div className="tool-icon">{t.icon}</div>
+                <div className="tool-icon">
+                  <t.icon className="w-5 h-5" />
+                </div>
                 <div>
                   <h4>{t.title}</h4>
                   <p>{t.desc}</p>
                 </div>
               </div>
-              <svg
-                className="tool-dl"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M10 3v10M6 9l4 4 4-4M3 17h14"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Download className="tool-dl w-5 h-5" />
             </div>
           ))}
         </div>

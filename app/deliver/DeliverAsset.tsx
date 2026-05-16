@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { useDeliver } from "./DeliverContext";
 import { PROJECTS } from "@/components/data/projects";
+import { Toast } from "@/components/ui/Modal";
 
 interface DeliverAssetProps {
   email: string;
@@ -28,6 +29,7 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
   const [project, setProject] = useState<typeof PROJECTS[number] | null>(null);
   const [loading, setLoading] = useState(true);
   const [downloadedItems, setDownloadedItems] = useState<Set<string>>(new Set());
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
   useEffect(() => {
     // In production, this would fetch from backend with verification
@@ -52,7 +54,8 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
-    alert("Link copied to clipboard!");
+    setToast({ message: "Link copied to clipboard!", type: "success" });
+    setTimeout(() => setToast(null), 3000);
   };
 
   if (loading) {
@@ -259,6 +262,8 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
           </div>
         </div>
       </div>
+
+      {toast && <Toast message={toast.message} type={toast.type} />}
     </div>
   );
 }

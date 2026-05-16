@@ -1,32 +1,36 @@
+"use client";
+
+import { Clapperboard, Camera, Scissors, Mic, FileText, FolderOpen } from "lucide-react";
+
 export const Solution = () => {
   const solutions = [
     {
-      icon: "🎬",
+      icon: Clapperboard,
       title: "Documentary Production",
       desc: "Cinematic field documentaries that turn your program's work into powerful human stories donors and stakeholders can't ignore.",
     },
     {
-      icon: "📸",
+      icon: Camera,
       title: "Photography Stories",
       desc: "Editorial-grade photography that captures authentic moments — from rural communities to high-stakes conferences.",
     },
     {
-      icon: "✂️",
+      icon: Scissors,
       title: "Social Media Campaigns",
       desc: "Multi-format content packages built for every platform your audience uses — reels, stills, stories, and hero films.",
     },
     {
-      icon: "🎙️",
+      icon: Mic,
       title: "Corporate Video",
       desc: "Leadership interviews, brand films, and launch content that makes your organization's voice credible and memorable.",
     },
     {
-      icon: "📋",
+      icon: FileText,
       title: "Story Strategy",
       desc: "We map your goals, audiences, and key blockers before a camera rolls — so every asset earns its place.",
     },
     {
-      icon: "🗂️",
+      icon: FolderOpen,
       title: "Impact Packages",
       desc: "Audit-ready story packages combining film, photography, and written narrative for grant reporting and partner updates.",
     },
@@ -43,7 +47,9 @@ export const Solution = () => {
       <div className="solution-grid">
         {solutions.map((s) => (
           <div key={s.title} className="solution-card">
-            <div className="solution-icon">{s.icon}</div>
+            <div className="solution-icon">
+              <s.icon className="w-5 h-5" />
+            </div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
           </div>

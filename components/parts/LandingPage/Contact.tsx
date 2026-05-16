@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Phone, Mail, Clapperboard, Send } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,10 +13,15 @@ export const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };
+
+  const contactInfo = [
+    { icon: Phone, label: "+250 788 843 915" },
+    { icon: Mail, label: "hello@cllevermotion.com" },
+  ];
 
   return (
     <section id="contact">
@@ -24,10 +30,10 @@ export const Contact = () => {
         <div>
           <div className="label">Lead Capture</div>
           <h2 className="contact-title">
-            It's time to turn your vision into reality.
+            It&apos;s time to turn your vision into reality.
           </h2>
           <p className="contact-desc">
-            Get a free Impact Story Audit. We'll review your current
+            Get a free Impact Story Audit. We&apos;ll review your current
             storytelling and show you exactly where the gaps are — no strings
             attached.
           </p>
@@ -39,10 +45,7 @@ export const Contact = () => {
               flexWrap: "wrap",
             }}
           >
-            {[
-              { icon: "📞", label: "+250 788 843 915" },
-              { icon: "✉️", label: "hello@cllevermotion.com" },
-            ].map((c) => (
+            {contactInfo.map((c) => (
               <div
                 key={c.label}
                 style={{
@@ -53,7 +56,7 @@ export const Contact = () => {
                   fontSize: "0.88rem",
                 }}
               >
-                <span>{c.icon}</span>
+                <c.icon className="w-5 h-5" />
                 {c.label}
               </div>
             ))}
@@ -70,7 +73,7 @@ export const Contact = () => {
               textAlign: "center",
             }}
           >
-            <div style={{ fontSize: "2.5rem", marginBottom: 16 }}>🎬</div>
+            <Clapperboard className="w-12 h-12 text-[#E8A020] mx-auto mb-4" />
             <h3
               style={{
                 fontFamily: "var(--ff-display)",
@@ -78,7 +81,7 @@ export const Contact = () => {
                 marginBottom: 12,
               }}
             >
-              You're in the frame.
+              You&apos;re in the frame.
             </h3>
             <p
               style={{
@@ -87,7 +90,7 @@ export const Contact = () => {
                 lineHeight: 1.7,
               }}
             >
-              We'll review your story and reach out within 48 hours with your
+              We&apos;ll review your story and reach out within 48 hours with your
               Impact Story Audit.
             </p>
           </div>
@@ -149,9 +152,7 @@ export const Contact = () => {
               <option>Other</option>
             </select>
             <button type="submit">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M2 9l14-7-7 14V9H2z" fill="currentColor" />
-              </svg>
+              <Send className="w-4 h-4" />
               Get Your Free Impact Story Audit
             </button>
           </form>

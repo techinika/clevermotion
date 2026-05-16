@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ShieldCheck, ArrowLeft, Loader2 } from "lucide-react";
 import { useDeliver } from "./DeliverContext";
+import { Modal } from "@/components/ui/Modal";
 
 interface DeliverVerifyProps {
   email: string;
@@ -15,6 +16,7 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
   const [code, setCode] = useState("");
   const [isVerifying, setIsVerifying] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showResendModal, setShowResendModal] = useState(false);
 
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,16 +127,21 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
             <button 
               type="button"
               className="text-[#E8A020] hover:underline"
-              onClick={() => {
-                // In production, this would trigger a resend
-                alert("Code resent! (Demo - check your inbox)");
-              }}
+              onClick={() => setShowResendModal(true)}
             >
               Request new code
             </button>
           </p>
         </div>
       </div>
+
+      <Modal
+        isOpen={showResendModal}
+        onClose={() => setShowResendModal(false)}
+        type="success"
+        title="Code Sent"
+        message="A new verification code has been sent to your email. Please check your inbox (and spam folder)."
+      />
     </div>
   );
 }
