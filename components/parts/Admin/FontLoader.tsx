@@ -89,7 +89,7 @@ export function FontLoader() {
     }
     .btn-danger:hover { background:rgba(239,68,68,.18); border-color:rgba(239,68,68,.35); }
 
-    .table-row { transition:background .15s; }
+    .table-row { transition:background .15s;  }
     .table-row:hover { background:rgba(255,255,255,.025); }
 
     .drop-zone {
