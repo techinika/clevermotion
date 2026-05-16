@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = ({ scrolled }: { scrolled: boolean }) => {
   return (
-    <nav className={scrolled ? "scrolled" : ""}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <Link href="/" className="nav-logo">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="2" y="2" width="10" height="24" rx="1" fill="#E8A020" />
