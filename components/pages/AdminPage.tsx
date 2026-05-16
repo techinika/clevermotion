@@ -758,7 +758,7 @@ function ActivityView({ projects, customers }: { projects: Project[]; customers:
   const downloads = allEvents.filter(e => e.icon === "download").length;
 
   return (
-    <div>
+    <div className="flex-1">
       <div className="mb-8">
         <p className="font-mono-cm text-[.6rem] tracking-[.2em] uppercase mb-1" style={{ color: "rgba(232,160,32,.7)" }}>Monitoring</p>
         <h2 className="font-display text-3xl font-black text-white">Activity Log</h2>
@@ -911,7 +911,7 @@ export default function AdminPage() {
             </div>
           </div>
 
-          <div className="p-8">
+          <div className="p-8 flex flex-col flex-1">
             {view === "dashboard" && <DashboardView customers={customers} projects={projects} />}
             {view === "customers" && <CustomersView customers={customers} projects={projects} setCustomers={setCustomers} setView={setView} setSelectedCustomer={setSelectedCustomer} toast={showToast} />}
             {view === "projects" && <ProjectsView customers={customers} projects={projects} setProjects={setProjects} selectedCustomer={selectedCustomer} setSelectedCustomer={setSelectedCustomer} setSelectedProject={setSelectedProject} setView={setView} toast={showToast} />}
