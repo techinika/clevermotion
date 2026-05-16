@@ -3,16 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { 
-  Download, 
-  Play, 
-  Image, 
-  FileText, 
-  ArrowLeft, 
-  CheckCircle2,
-  Copy,
-  ExternalLink,
-  Share2,
-  Package
+  Download, Play, Image, FileText, ArrowLeft, CheckCircle2, 
+  Copy, ExternalLink, Share2, Package, MonitorPlay
 } from "lucide-react";
 import { useDeliver } from "./DeliverContext";
 import { PROJECTS } from "@/components/data/projects";
@@ -32,14 +24,11 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
   useEffect(() => {
-    // In production, this would fetch from backend with verification
-    // For demo, just find the project by ID
     const found = PROJECTS.find((p) => p.id === parseInt(assetId));
     setProject(found || null);
     setLoading(false);
   }, [assetId]);
 
-  // Redirect if not verified
   useEffect(() => {
     if (!verifiedEmail || verifiedEmail !== email) {
       router.push(`/deliver?email=${encodeURIComponent(email)}`);
@@ -48,8 +37,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
 
   const handleDownload = (item: string) => {
     setDownloadedItems((prev) => new Set(prev).add(item));
-    // In production, this would trigger actual download
-    // For demo, just show the action
   };
 
   const handleCopyLink = () => {
@@ -77,9 +64,15 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
     );
   }
 
+  const getIcon = (item: string) => {
+    const lower = item.toLowerCase();
+    if (lower.includes("video") || lower.includes("film")) return Play;
+    if (lower.includes("photo") || lower.includes("essay") || lower.includes("still")) return Image;
+    return FileText;
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Header */}
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 py-5 bg-[#080a0f]/90 backdrop-blur-xl border-b border-white/[0.07]">
         <a href="/" className="font-display text-xl font-bold text-white flex items-center gap-2.5">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -106,10 +99,8 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
         </div>
       </nav>
 
-      {/* Main Content */}
       <div className="pt-28 pb-16 px-8">
         <div className="max-w-4xl mx-auto">
-          {/* Success Banner */}
           <div className="flex items-center gap-3 p-4 rounded-xl bg-[#E8A020]/10 border border-[#E8A020]/20 mb-8">
             <CheckCircle2 className="w-5 h-5 text-[#E8A020]" />
             <span className="font-body text-sm text-white">
@@ -117,7 +108,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </span>
           </div>
 
-          {/* Project Header */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase px-3 py-1 rounded-full bg-[#E8A020]/10 text-[#E8A020] border border-[#E8A020]/20">
@@ -135,7 +125,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </p>
           </div>
 
-          {/* Preview / Slideshow */}
           <div className="relative rounded-2xl overflow-hidden mb-8" style={{ height: "400px" }}>
             <div 
               className="absolute inset-0"
@@ -143,12 +132,10 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#080a0f] via-transparent to-transparent" />
             
-            {/* Play Button */}
             <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#E8A020]/90 flex items-center justify-center hover:bg-[#f5c842] transition-colors group">
-              <Play className="w-8 h-8 text-[#080a0f] ml-1 group-hover:scale-110 transition-transform" />
+              <MonitorPlay className="w-8 h-8 text-[#080a0f] group-hover:scale-110 transition-transform" />
             </button>
 
-            {/* Slide Indicators */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
               {project.slides.map((_, i) => (
                 <button
@@ -159,12 +146,12 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </div>
           </div>
 
-          {/* Deliverables */}
           <div className="mb-8">
             <h2 className="font-display text-xl font-bold text-white mb-4">Deliverables</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {project.deliverables.map((item, i) => {
                 const isDownloaded = downloadedItems.has(item);
+                const Icon = getIcon(item);
                 return (
                   <div
                     key={i}
@@ -172,13 +159,7 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
                   >
                     <div className="flex items-center gap-3">
                       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${isDownloaded ? "bg-[#E8A020]/10" : "bg-white/5"}`}>
-                        {item.toLowerCase().includes("video") || item.toLowerCase().includes("film") ? (
-                          <Play className={`w-5 h-5 ${isDownloaded ? "text-[#E8A020]" : "text-white/40"}`} />
-                        ) : item.toLowerCase().includes("photo") || item.toLowerCase().includes("essay") ? (
-                          <Image className={`w-5 h-5 ${isDownloaded ? "text-[#E8A020]" : "text-white/40"}`} />
-                        ) : (
-                          <FileText className={`w-5 h-5 ${isDownloaded ? "text-[#E8A020]" : "text-white/40"}`} />
-                        )}
+                        <Icon className={`w-5 h-5 ${isDownloaded ? "text-[#E8A020]" : "text-white/40"}`} />
                       </div>
                       <span className="font-body text-sm text-white">{item}</span>
                     </div>
@@ -198,7 +179,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </div>
           </div>
 
-          {/* Project Info */}
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div className="p-4 rounded-xl bg-[#111827] border border-white/[0.07]">
               <p className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase text-white/30 mb-1">Location</p>
@@ -210,7 +190,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </div>
           </div>
 
-          {/* Challenge / Solution / Outcome */}
           <div className="space-y-4 mb-8">
             <div className="p-5 rounded-xl bg-[#111827]/50 border border-white/[0.07]">
               <h3 className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase text-[#E8A020] mb-2">The Challenge</h3>
@@ -226,7 +205,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </div>
           </div>
 
-          {/* Impact */}
           <div className="mb-8">
             <h2 className="font-display text-xl font-bold text-white mb-4">Impact</h2>
             <div className="flex flex-wrap gap-3">
@@ -242,7 +220,6 @@ export function DeliverAsset({ email, assetId }: DeliverAssetProps) {
             </div>
           </div>
 
-          {/* Actions */}
           <div className="flex flex-wrap gap-4">
             <button className="flex items-center gap-2 bg-[#E8A020] text-[#080a0f] font-body font-semibold px-6 py-3 rounded-xl hover:bg-[#f5c842] transition-colors">
               <Download className="w-5 h-5" />

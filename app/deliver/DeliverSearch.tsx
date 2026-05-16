@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, Package, Mail, ArrowRight } from "lucide-react";
+import { Package, Mail, ArrowRight, Search, HelpCircle } from "lucide-react";
 
 export function DeliverSearch() {
   const router = useRouter();
@@ -14,16 +14,19 @@ export function DeliverSearch() {
     if (!email.trim()) return;
     
     setIsSearching(true);
-    // In production, this would validate against a backend
-    // For now, just redirect to verify page
     setTimeout(() => {
       router.push(`/deliver?email=${encodeURIComponent(email)}`);
     }, 500);
   };
 
+  const instructions = [
+    { num: "1", title: "Enter your email", desc: "Use the email we sent your delivery notification to" },
+    { num: "2", title: "Verify your identity", desc: "Enter the unique code we provided with your delivery" },
+    { num: "3", title: "Access & download", desc: "View your project assets and download what you need" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 py-5 bg-[#080a0f]/90 backdrop-blur-xl border-b border-white/[0.07]">
         <a href="/" className="font-display text-xl font-bold text-white flex items-center gap-2.5">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -37,10 +40,8 @@ export function DeliverSearch() {
         </a>
       </nav>
 
-      {/* Main Content */}
       <div className="flex-1 flex items-center justify-center px-8 py-20">
         <div className="max-w-xl w-full">
-          {/* Hero Section */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#E8A020]/10 border border-[#E8A020]/20 mb-6">
               <Package className="w-8 h-8 text-[#E8A020]" />
@@ -53,7 +54,6 @@ export function DeliverSearch() {
             </p>
           </div>
 
-          {/* Search Form */}
           <form onSubmit={handleSearch} className="relative">
             <div className="relative">
               <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
@@ -88,37 +88,26 @@ export function DeliverSearch() {
             </button>
           </form>
 
-          {/* Instructions */}
           <div className="mt-12 p-6 rounded-xl bg-[#111827]/50 border border-white/[0.07]">
-            <h3 className="font-mono-cm text-[0.65rem] tracking-[0.2em] uppercase text-[#E8A020] mb-4">
+            <h3 className="font-mono-cm text-[0.65rem] tracking-[0.2em] uppercase text-[#E8A020] mb-4 flex items-center gap-2">
+              <HelpCircle className="w-4 h-4" />
               How it works
             </h3>
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E8A020]/10 text-[#E8A020] text-xs font-bold flex items-center justify-center">1</span>
-                <div>
-                  <p className="font-body text-sm text-white font-medium">Enter your email</p>
-                  <p className="font-body text-xs text-white/40 mt-0.5">Use the email we sent your delivery notification to</p>
+              {instructions.map((item) => (
+                <div key={item.num} className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E8A020]/10 text-[#E8A020] text-xs font-bold flex items-center justify-center">
+                    {item.num}
+                  </span>
+                  <div>
+                    <p className="font-body text-sm text-white font-medium">{item.title}</p>
+                    <p className="font-body text-xs text-white/40 mt-0.5">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E8A020]/10 text-[#E8A020] text-xs font-bold flex items-center justify-center">2</span>
-                <div>
-                  <p className="font-body text-sm text-white font-medium">Verify your identity</p>
-                  <p className="font-body text-xs text-white/40 mt-0.5">Enter the unique code we provided with your delivery</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#E8A020]/10 text-[#E8A020] text-xs font-bold flex items-center justify-center">3</span>
-                <div>
-                  <p className="font-body text-sm text-white font-medium">Access & download</p>
-                  <p className="font-body text-xs text-white/40 mt-0.5">View your project assets and download what you need</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Help Text */}
           <p className="text-center mt-8 font-body text-sm text-white/30">
             Need help? <a href="#contact" className="text-[#E8A020] hover:underline">Contact support</a>
           </p>

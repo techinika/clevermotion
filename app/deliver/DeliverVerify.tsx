@@ -28,16 +28,9 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
     setIsVerifying(true);
     setError(null);
 
-    // In production, this would verify against a backend
-    // For demo purposes, accept any 4+ character code
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      // Mock successful verification - in production, this would validate against backend
-      // and get the list of assets for this email
       setVerifiedEmail(email);
-      
-      // Redirect to show available assets (mock asset ID for demo)
       router.push(`/deliver?email=${encodeURIComponent(email)}&asset=1`);
     } catch {
       setError("Verification failed. Please check your code and try again.");
@@ -48,7 +41,6 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 py-5 bg-[#080a0f]/90 backdrop-blur-xl border-b border-white/[0.07]">
         <a href="/" className="font-display text-xl font-bold text-white flex items-center gap-2.5">
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -66,10 +58,8 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
         </a>
       </nav>
 
-      {/* Main Content */}
       <div className="flex-1 flex items-center justify-center px-8 py-20">
         <div className="max-w-md w-full">
-          {/* Icon */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#E8A020]/10 border border-[#E8A020]/20 mb-6">
               <ShieldCheck className="w-8 h-8 text-[#E8A020]" />
@@ -82,7 +72,6 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
             </p>
           </div>
 
-          {/* Verification Form */}
           <form onSubmit={handleVerify} className="space-y-4">
             <div>
               <input
@@ -121,7 +110,6 @@ export function DeliverVerify({ email }: DeliverVerifyProps) {
             </button>
           </form>
 
-          {/* Resend Option */}
           <p className="text-center mt-6 font-body text-sm text-white/40">
             Didnt receive a code?{" "}
             <button 
