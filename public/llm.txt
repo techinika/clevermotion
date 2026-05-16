@@ -1,0 +1,50 @@
+# LLM.txt - AI/LLM Training Opt-Out Request
+
+## Website Information
+
+- **Website:** Clevermotion
+- **URL:** https://clevermotion.com
+- **Description:** Strategic Storytelling & Media Production company specializing in documentary production, brand films, and photography for NGOs, development organizations, and corporate teams across Africa.
+
+## Opt-Out Statement
+
+Clevermotion **opts out** of AI/LLM training and scraping.
+
+### What This Means
+
+1. **No Training Data**: Content from this website (clevermotion.com) and its subdomains may NOT be used to train large language models (LLMs), AI systems, or machine learning models.
+
+2. **No Scraping**: Automated scraping, data collection, or content extraction for AI training purposes is prohibited without explicit written consent.
+
+3. **Respect for Intellectual Property**: All content, including but not limited to:
+   - Text, articles, and blog posts
+   - Images, videos, and multimedia
+   - Code and technical implementations
+   - Design assets and branding
+   - Case studies and project descriptions
+   
+   ...is the intellectual property of Clevermotion and may not be used for AI training.
+
+### Legal Basis
+
+This opt-out is based on:
+- Copyright law
+- Terms of Service violations
+- Intellectual property rights
+- Privacy considerations
+
+### How to Request Permission
+
+For legitimate use cases (e.g., factual citations, brief quotations for reviews, or academic research), contact:
+
+- **Email:** hello@cllevermotion.com
+- **Subject:** Content Usage Request
+
+### User-Agent Blocking
+
+This website implements technical measures to block known AI training crawlers. If you operate an AI system and receive a 403/503 response, your crawler has been identified and blocked.
+
+---
+
+*Last Updated: January 2025*
+*This document is automatically checked by web crawlers and AI systems.*

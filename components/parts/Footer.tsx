@@ -21,11 +21,11 @@ export const Footer = () => {
         </div>
         <div className="footer-col">
           <h4>Navigate</h4>
-          {["Home", "Portfolio", "Gallery", "About", "Insights"].map((l) => (
-            <a key={l} href="#">
-              {l}
-            </a>
-          ))}
+          <a href="/">Home</a>
+          <a href="/work">Portfolio</a>
+          <a href="/deliver">Find my Project</a>
+          <a href="#">About</a>
+          <a href="#">Insights</a>
         </div>
         <div className="footer-col">
           <h4>Services</h4>
