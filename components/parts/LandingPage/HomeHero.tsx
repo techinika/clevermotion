@@ -50,49 +50,57 @@ export const HomeHero = () => {
       </div>
 
       {/* Right side – media mosaic */}
-      <div className="hero-media">
-        <div
-          className="hero-img"
-          style={{ background: "linear-gradient(135deg,#1a2a3a,#0d1117)" }}
-        >
+        <div className="hero-media">
           <div
+            className="hero-img"
             style={{
-              width: "100%",
-              height: "100%",
-              background: "linear-gradient(160deg,#0d2a3d,#1a0a1a)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              backgroundImage: "url('/images/a picture of us on video recording.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
-            <div className="play-btn">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M5 3l10 6-10 6V3z" fill="#080a0f" />
-              </svg>
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                background: "rgba(13, 10, 15, 0.6)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div className="play-btn">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M5 3l10 6-10 6V3z" fill="#080a0f" />
+                </svg>
+              </div>
             </div>
+            <div className="hero-img-badge">Showreel 2025</div>
           </div>
-          <div className="hero-img-badge">Showreel 2025</div>
+          {[
+            {
+              label: "Documentary",
+              src: '/images/a picture of recording at one acre fund.png',
+            },
+            {
+              label: "Photography",
+              src: '/images/a picture of a big camera.png',
+            },
+            {
+              label: "Conference",
+              src: '/images/a thumbnail for Africa CEO Forum (ACF), Opening Video.png',
+            },
+          ].map(({ label, src }) => (
+            <div key={label} className="hero-img" style={{
+              backgroundImage: `url('${src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}>
+              <div style={{ width: "100%", height: "100%", background: "rgba(13, 10, 15, 0.6)" }} />
+              <div className="hero-img-badge">{label}</div>
+            </div>
+          ))}
         </div>
-        {[
-          {
-            label: "Documentary",
-            bg: "linear-gradient(160deg,#1a2a3a,#0d1b2a)",
-          },
-          {
-            label: "Photography",
-            bg: "linear-gradient(160deg,#2a1a1a,#1a0a0a)",
-          },
-          {
-            label: "Conference",
-            bg: "linear-gradient(160deg,#1a2a1a,#0d2010)",
-          },
-        ].map(({ label, bg }) => (
-          <div key={label} className="hero-img" style={{ background: bg }}>
-            <div style={{ width: "100%", height: "100%", background: bg }} />
-            <div className="hero-img-badge">{label}</div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 };
