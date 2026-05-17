@@ -27,26 +27,27 @@ export const PROJECTS = [
       "2 international screenings",
       "Most-shared internal asset",
     ],
+    videoUrl: "/videos/Introducing Agaseke 1.0 for Content Creators in Rwanda.mp4",
     slides: [
       {
-        bg: "linear-gradient(160deg,#0d2a1a 0%,#193d10 60%,#0a1a08 100%)",
+        src: "/images/a picture of recording at one acre fund.png",
         label: "Field — Musanze District",
       },
       {
-        bg: "linear-gradient(160deg,#1a2a0d 0%,#2d3d10 60%,#0a1505 100%)",
+        src: "/images/a picture of us on video recording.png",
         label: "Interview — Farming Family",
       },
       {
-        bg: "linear-gradient(160deg,#0a1a0d 0%,#153d20 60%,#081208 100%)",
+        src: "/images/a thumbnail for one acre fund video.png",
         label: "B-Roll — Harvest Season",
       },
       {
-        bg: "linear-gradient(160deg,#0d2010 0%,#1a3a15 60%,#080f05 100%)",
+        src: "/images/a picture of recording at one acre fund.png",
         label: "Aerial — Terraced Fields",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#0d2a1a,#193d10,#0a1a08)",
+      src: "/images/a thumbnail for one acre fund video.png",
       aspect: "wide",
     },
     featured: true,
@@ -81,20 +82,20 @@ export const PROJECTS = [
     ],
     slides: [
       {
-        bg: "linear-gradient(160deg,#2a0d1a 0%,#3d1020 60%,#1a0810 100%)",
+        src: "/images/a thumbnail for Aces Vaccine Symposium 2025.png",
         label: "Studio — Kigali",
       },
       {
-        bg: "linear-gradient(160deg,#1a0d2a 0%,#200f3d 60%,#100815 100%)",
+        src: "/images/a picture of a big camera.png",
         label: "Clinic — Kayonza",
       },
       {
-        bg: "linear-gradient(160deg,#2a1a0d 0%,#3d2a10 60%,#1a1008 100%)",
+        src: "/images/Photo of someone giving a speech on the stage.png",
         label: "Portrait — Dr Uwimana",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#2a0d1a,#3d1020,#1a0810)",
+      src: "/images/a thumbnail for Aces Vaccine Symposium 2025.png",
       aspect: "tall",
     },
     featured: false,
@@ -129,24 +130,24 @@ export const PROJECTS = [
     ],
     slides: [
       {
-        bg: "linear-gradient(160deg,#0d1a2a 0%,#103040 60%,#08151a 100%)",
+        src: "/images/a thumbnail for Africa CEO Forum (ACF), Opening Video.png",
         label: "Opening Ceremony",
       },
       {
-        bg: "linear-gradient(160deg,#0d2a1a 0%,#10402a 60%,#08150f 100%)",
+        src: "/images/a thumbnail for AIMS video.png",
         label: "Panel Sessions",
       },
       {
-        bg: "linear-gradient(160deg,#1a2a0d 0%,#2a3d10 60%,#0f150a 100%)",
+        src: "/images/a thumbnail for Documentary Film - CLECAM EJO HEZA.png",
         label: "Exhibition Floor",
       },
       {
-        bg: "linear-gradient(160deg,#0a1a2a 0%,#10283d 60%,#080f18 100%)",
+        src: "/images/a thumbnail for Aces Vaccine Symposium 2025.png",
         label: "Closing Gala",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#0d1a2a,#103040,#08151a)",
+      src: "/images/a thumbnail for Africa CEO Forum (ACF), Opening Video.png",
       aspect: "wide",
     },
     featured: true,
@@ -181,20 +182,20 @@ export const PROJECTS = [
     ],
     slides: [
       {
-        bg: "linear-gradient(160deg,#2a1a0d 0%,#3d280a 60%,#1a100a 100%)",
+        src: "/images/a thumbnail for restoration graduation - a picture of a happy person giving a speech.png",
         label: "Forum 1 — Opening",
       },
       {
-        bg: "linear-gradient(160deg,#1a2a0d 0%,#283d0a 60%,#0f180a 100%)",
+        src: "/images/Recording Prof SAM YALA from AIMS.png",
         label: "Forum 2 — Pitching Round",
       },
       {
-        bg: "linear-gradient(160deg,#0d1a2a 0%,#0a283d 60%,#080f1a 100%)",
+        src: "/images/a thumbnail for police video.png",
         label: "Forum 3 — Awards",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#2a1a0d,#3d280a,#1a100a)",
+      src: "/images/a thumbnail for restoration graduation - a picture of a happy person giving a speech.png",
       aspect: "square",
     },
     featured: false,
@@ -229,20 +230,20 @@ export const PROJECTS = [
     ],
     slides: [
       {
-        bg: "linear-gradient(160deg,#1a0d2a 0%,#281040 60%,#100815 100%)",
+        src: "/images/a picture of a big camera.png",
         label: "Classroom — Freetown",
       },
       {
-        bg: "linear-gradient(160deg,#2a1a0d 0%,#3d2810 60%,#1a1008 100%)",
+        src: "/images/a picture of our cameraman before taking pictures.png",
         label: "Teacher Portrait Series",
       },
       {
-        bg: "linear-gradient(160deg,#0d2a1a 0%,#104020 60%,#081508 100%)",
+        src: "/images/a picture showing us putting a mic on the customer before going on camera.png",
         label: "Student Moments",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#1a0d2a,#281040,#100815)",
+      src: "/images/a picture of our cameraman before taking pictures.png",
       aspect: "tall",
     },
     featured: false,
@@ -277,20 +278,20 @@ export const PROJECTS = [
     ],
     slides: [
       {
-        bg: "linear-gradient(160deg,#1a1a2a 0%,#252535 60%,#0d0d1a 100%)",
+        src: "/images/a picture of the camera.png",
         label: "Property — Interior Shoot",
       },
       {
-        bg: "linear-gradient(160deg,#2a2a1a 0%,#353520 60%,#1a1a0a 100%)",
+        src: "/images/a picture of a drone before taking pictures.png",
         label: "Architecture Details",
       },
       {
-        bg: "linear-gradient(160deg,#0d1a2a 0%,#102035 60%,#080f18 100%)",
+        src: "/images/a picture of us on video recording.png",
         label: "Lifestyle — Homeowners",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#1a1a2a,#252535,#0d0d1a)",
+      src: "/images/a picture of the camera.png",
       aspect: "square",
     },
     featured: true,
@@ -325,20 +326,20 @@ export const PROJECTS = [
     ],
     slides: [
       {
-        bg: "linear-gradient(160deg,#0d2a2a 0%,#103d3d 60%,#081515 100%)",
+        src: "/images/a thumbnail for Aces Vaccine Symposium 2025.png",
         label: "Keynote — Main Stage",
       },
       {
-        bg: "linear-gradient(160deg,#2a0d2a 0%,#3d103d 60%,#150815 100%)",
+        src: "/images/a thumbnail for AIMS video.png",
         label: "Research Presentations",
       },
       {
-        bg: "linear-gradient(160deg,#1a2a0d 0%,#283d10 60%,#0f1808 100%)",
+        src: "/images/a thumbnail for Documentary Film - CLECAM EJO HEZA.png",
         label: "Networking Sessions",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#0d2a2a,#103d3d,#081515)",
+      src: "/images/a thumbnail for Aces Vaccine Symposium 2025.png",
       aspect: "wide",
     },
     featured: false,
@@ -371,22 +372,23 @@ export const PROJECTS = [
       "Creative authority established",
       "Cross-platform engagement",
     ],
+    videoUrl: "/videos/Introducing Agaseke 1.0 for Content Creators in Rwanda.mp4",
     slides: [
       {
-        bg: "linear-gradient(160deg,#2a0d0d 0%,#3d1010 60%,#1a0808 100%)",
+        src: "/images/a picture showing us putting a mic on the customer before going on camera.png",
         label: "Episode 1 — The Architect",
       },
       {
-        bg: "linear-gradient(160deg,#0d0d2a 0%,#10103d 60%,#08081a 100%)",
+        src: "/images/a picture of a big camera.png",
         label: "Episode 3 — The Photographer",
       },
       {
-        bg: "linear-gradient(160deg,#1a2a0d 0%,#283d10 60%,#0f180a 100%)",
+        src: "/images/a picture of recording at one acre fund.png",
         label: "Episode 5 — The Director",
       },
     ],
     thumbnail: {
-      bg: "linear-gradient(160deg,#2a0d0d,#3d1010,#1a0808)",
+      src: "/images/a picture of a big camera.png",
       aspect: "square",
     },
     featured: true,

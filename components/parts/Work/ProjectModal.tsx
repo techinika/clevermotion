@@ -103,7 +103,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <div
                 key={slide}
                 className="w-full h-full anim-fadein"
-                style={{ background: project.slides[slide].bg }}
+                style={{
+                  backgroundImage: project.slides[slide].src ? `url('${project.slides[slide].src}')` : undefined,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
                 {/* grain */}
                 <div
@@ -167,7 +171,13 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   key={i}
                   onClick={() => setSlide(i)}
                   className={`flex-shrink-0 rounded-lg overflow-hidden transition-all duration-200 ${i === slide ? "ring-2 ring-[#E8A020] ring-offset-1 ring-offset-[#0d1117]" : "opacity-50 hover:opacity-80"}`}
-                  style={{ width: 80, height: 52, background: s.bg }}
+                  style={{ 
+                    width: 80, 
+                    height: 52, 
+                    backgroundImage: s.src ? `url('${s.src}')` : undefined,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 ></button>
               ))}
             </div>
@@ -189,6 +199,23 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 ))}
               </div>
             </div>
+
+            {/* video section */}
+            {project.videoUrl && (
+              <div className="p-8 border-b border-white/[0.06]">
+                <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E8A020] mb-4">
+                  Video
+                </p>
+                <video
+                  className="w-full rounded-xl"
+                  controls
+                  preload="metadata"
+                >
+                  <source src={project.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
 
             {/* impact row */}
             <div className="p-8">

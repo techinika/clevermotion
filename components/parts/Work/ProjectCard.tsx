@@ -31,7 +31,9 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
         className="w-full overflow-hidden"
         style={{
           height: isTall ? "520px" : "240px",
-          background: project.thumbnail.bg,
+          backgroundImage: project.thumbnail.src ? `url('${project.thumbnail.src}')` : undefined,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* simulated film grain overlay */}
