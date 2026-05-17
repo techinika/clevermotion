@@ -10,6 +10,7 @@ export const Contact = () => {
     email: "",
     whatsapp: "",
     service: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -173,6 +174,19 @@ export const Contact = () => {
               <option>Impact Story Package</option>
               <option>Other</option>
             </select>
+            <textarea
+              placeholder="Tell us more about your project (optional) — timeline, budget, goals, specific deliverables..."
+              rows={4}
+              className="full"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              style={{
+                background: "var(--card)",
+                color: formData.message ? "var(--white)" : "var(--muted)",
+                resize: "vertical",
+                minHeight: "100px",
+              }}
+            />
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
