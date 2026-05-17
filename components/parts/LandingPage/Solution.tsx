@@ -1,5 +1,3 @@
-"use client";
-
 import { Clapperboard, Camera, Scissors, Mic, FileText, FolderOpen } from "lucide-react";
 
 export const Solution = () => {

@@ -1,5 +1,3 @@
-"use client";
-
 import { 
   LayoutDashboard, Users, FolderOpen, FileText, Activity, 
   Plus, Search, Eye, Edit, Trash2, Upload, Download, Copy, 
