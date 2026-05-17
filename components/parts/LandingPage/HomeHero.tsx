@@ -7,22 +7,24 @@ export const HomeHero = () => {
       <div style={{ position: "relative", zIndex: 1 }}>
         <div className="hero-eyebrow animate-fadeup">
           <span className="label">
-            Strategic Storytelling & Media Production
+            Documentary, Brand Film & Photography Production
           </span>
         </div>
 
         <h1 className="hero-title animate-fadeup delay-1">
-          Visual Stories
+          We help impact-driven organizations
           <br />
-          for Organizations
+          Tell their stories
           <br />
-          That <em>Create Impact.</em>
+          <em>Change.</em>
         </h1>
 
         <p className="hero-desc animate-fadeup delay-2">
-          Cllevermotion helps NGOs, development organizations, and corporate
-          teams produce powerful documentaries, brand films, and photography
-          that move audiences to action.
+          Cllevermotion is a full-service media production company based in Rwanda, 
+          specializing in documentary films, brand films, photography, and event coverage 
+          for NGOs, development organizations, and corporate teams across Africa. 
+          We help impact-driven organizations tell their stories in ways that inspire action, 
+          build trust, and create lasting change.
         </p>
 
         <div className="hero-cta animate-fadeup delay-3">

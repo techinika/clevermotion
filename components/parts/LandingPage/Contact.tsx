@@ -12,10 +12,32 @@ export const Contact = () => {
     service: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -151,9 +173,17 @@ export const Contact = () => {
               <option>Impact Story Package</option>
               <option>Other</option>
             </select>
-            <button type="submit">
-              <Send className="w-4 h-4" />
-              Get Your Free Impact Story Audit
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <span className="animate-pulse">Sending...</span>
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  Get Your Free Impact Story Audit
+                </>
+              )}
             </button>
           </form>
         )}
