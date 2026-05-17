@@ -9,6 +9,7 @@ Strategic Storytelling & Media Production website for organizations that create 
 - **Styling:** Tailwind CSS v4 + custom CSS utilities
 - **Fonts:** Google Fonts (Playfair Display, DM Sans, Space Mono) via `next/font`
 - **Icons:** Lucide React
+- **Email:** Nodemailer for contact form submissions
 
 ## Project Structure
 
@@ -18,23 +19,29 @@ Strategic Storytelling & Media Production website for organizations that create 
 │   ├── layout.tsx               # Root layout with SEO metadata & font config
 │   ├── page.tsx                 # Landing page
 │   ├── deliver/                  # Project delivery system
-│   │   ├── page.tsx              # Main delivery page
-│   │   ├── DeliverSearch.tsx     # Email search component
-│   │   ├── DeliverVerify.tsx     # Code verification component
-│   │   ├── DeliverAsset.tsx      # Asset display & download component
-│   │   └── DeliverContext.tsx    # State management
-│   └── work/
-│       └── page.tsx             # Portfolio page
+│   │   └── page.tsx              # Main delivery page
+│   ├── work/
+│   │   └── page.tsx             # Portfolio page
+│   ├── admin/
+│   │   └── page.tsx             # Admin dashboard
+│   └── api/
+│       └── contact/
+│           └── route.ts         # Contact form API endpoint
 ├── components/
 │   ├── data/
 │   │   └── projects.ts           # Project data
 │   ├── pages/
-│   │   ├── LandingPage.tsx      # Main landing page component
-│   │   └── Portfolio.tsx         # Portfolio page component
+│   │   ├── LandingPage.tsx       # Main landing page component
+│   │   ├── Portfolio.tsx          # Portfolio page component
+│   │   └── AdminPage.tsx          # Admin dashboard page
 │   └── parts/
-│       ├── Footer.tsx           # Footer component
-│       ├── Navbar.tsx           # Navbar component
-│       └── LandingPage/         # Landing page sections
+│       ├── Footer.tsx             # Footer component
+│       ├── Navbar.tsx             # Navbar component
+│       ├── Admin/                 # Admin components
+│       │   ├── FontLoader.tsx
+│       │   ├── Icons.tsx
+│       │   └── MockData.ts
+│       └── LandingPage/           # Landing page sections
 │           ├── Clients.tsx
 │           ├── Contact.tsx
 │           ├── FeaturedWork.tsx
@@ -45,21 +52,69 @@ Strategic Storytelling & Media Production website for organizations that create 
 │           ├── Process.tsx
 │           └── Solution.tsx
 ├── public/
-│   ├── favicon.ico              # Site favicon
-│   ├── sitemap.xml              # SEO sitemap
-│   ├── robots.txt               # Robots.txt for search engines
-│   └── llm.txt                  # AI/LLM training opt-out
+│   ├── images/                   # Project images for gallery & portfolio
+│   ├── logos/                    # Client logos for partners marquee
+│   ├── videos/                   # Demo videos
+│   ├── sitemap.xml               # SEO sitemap
+│   ├── robots.txt                # Robots.txt for search engines
+│   └── llm.txt                   # AI/LLM training opt-out
 └── package.json
 ```
 
 ## Pages
 
-- `/` - Landing page with hero, problem/solution sections, client marquee, gallery, tools, and contact form
-- `/work` - Portfolio page with project grid, filtering, and modal details
+- `/` - Landing page with hero, problem/solution sections, client marquee, gallery, free tools with subscription modal, and contact form
+- `/work` - Portfolio page with project grid, filtering, and modal details with video support
 - `/deliver` - Project delivery system with 3-step flow:
   - Email search to find project
   - Code verification for identity
   - Asset display with download options
+- `/admin` - Admin dashboard for managing customers, projects, deliverables, and activity logs
+
+## Features
+
+### Landing Page
+- SEO-optimized hero section with company description
+- Client logos marquee with real partner logos
+- Featured work section with real project images
+- Gallery with actual project thumbnails
+- Free resources with subscription modal (lead capture)
+- Contact form with message textarea and email notifications
+
+### Portfolio (/work)
+- Project grid with filtering by category
+- Real images for all projects
+- Video support in project modals
+- Keyboard navigation (arrow keys, ESC)
+
+### Project Delivery (/deliver)
+- Secure 3-step delivery flow
+- Email-based project lookup
+- Unique code verification
+- Asset download access
+
+### Admin Dashboard (/admin)
+- Dashboard with project pipeline stats
+- Customer management (add, delete)
+- Project management with status tracking
+- Deliverables management with file upload
+- Activity log tracking
+
+## Environment Variables
+
+Create a `.env.local` file with the following:
+
+```env
+# Admin email to receive contact form submissions
+ADMIN_EMAIL=admin@example.com
+
+# SMTP Configuration for sending emails
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-specific-password
+SMTP_FROM=your-email@gmail.com
+```
 
 ## Getting Started
 
