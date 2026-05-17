@@ -22,11 +22,11 @@ export const Process = () => {
       <div className="process-header">
         <div>
           <div className="label">How It Works</div>
-          <h2 className="process-title">Understand → Strategy → Production</h2>
+          <h2 className="process-title">Our Process</h2>
         </div>
         <p style={{ fontSize: "1rem", lineHeight: 1.7, color: "var(--muted)" }}>
           A simple production system that keeps the story clear and intentional
-          before cameras ever roll.
+          before cameras roll.
         </p>
       </div>
       <div className="process-steps">

@@ -1008,6 +1008,7 @@ nav.navbar.scrolled {
   gap: 14px;
 }
 .contact-form input,
+textarea,
 .contact-form select {
   background: var(--card);
   border: 1px solid var(--border);
@@ -1021,11 +1022,16 @@ nav.navbar.scrolled {
   width: 100%;
 }
 .contact-form input:focus,
+textarea:focus,
 .contact-form select:focus {
   border-color: var(--gold);
 }
 .contact-form input::placeholder {
   color: var(--muted);
+}
+.contact-form textarea {
+  min-height: 100px;
+  grid-column: 1 / -1;
 }
 .contact-form .full {
   grid-column: 1 / -1;

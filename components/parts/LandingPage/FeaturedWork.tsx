@@ -46,7 +46,7 @@ export const FeaturedWork = () => {
           <h2 className="work-title">Proof that story changes perception</h2>
         </div>
         <a
-          href="#"
+          href="/work"
           style={{
             color: "var(--gold)",
             textDecoration: "none",

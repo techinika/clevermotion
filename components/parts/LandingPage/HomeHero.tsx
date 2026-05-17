@@ -12,19 +12,17 @@ export const HomeHero = () => {
         </div>
 
         <h1 className="hero-title animate-fadeup delay-1">
-          We help impact-driven organizations
+          We help organizations
           <br />
           Tell their stories
           <br />
-          <em>Change.</em>
+          <em>for results.</em>
         </h1>
 
         <p className="hero-desc animate-fadeup delay-2">
-          Cllevermotion is a full-service media production company based in Rwanda, 
-          specializing in documentary films, brand films, photography, and event coverage 
-          for NGOs, development organizations, and corporate teams across Africa. 
-          We help impact-driven organizations tell their stories in ways that inspire action, 
-          build trust, and create lasting change.
+          Cllevermotion is a full-service media production company based in
+          Rwanda. We help impact-driven organizations tell their stories in ways that inspire action, build trust, and create lasting
+          change.
         </p>
 
         <div className="hero-cta animate-fadeup delay-3">
@@ -52,11 +50,53 @@ export const HomeHero = () => {
       </div>
 
       {/* Right side – media mosaic */}
-        <div className="hero-media">
+      <div className="hero-media">
+        <div
+          className="hero-img"
+          style={{
+            backgroundImage:
+              "url('/images/a picture of us on video recording.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div
+            style={{
+              width: "100%",
+              height: "100%",
+              background: "rgba(13, 10, 15, 0.6)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div className="play-btn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M5 3l10 6-10 6V3z" fill="#080a0f" />
+              </svg>
+            </div>
+          </div>
+          <div className="hero-img-badge">Showreel 2025</div>
+        </div>
+        {[
+          {
+            label: "Documentary",
+            src: "/images/a picture of recording at one acre fund.png",
+          },
+          {
+            label: "Photography",
+            src: "/images/a picture of a big camera.png",
+          },
+          {
+            label: "Conference",
+            src: "/images/a thumbnail for Africa CEO Forum (ACF), Opening Video.png",
+          },
+        ].map(({ label, src }) => (
+          <div
+            key={label}
             className="hero-img"
             style={{
-              backgroundImage: "url('/images/a picture of us on video recording.png')",
+              backgroundImage: `url('${src}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -66,43 +106,12 @@ export const HomeHero = () => {
                 width: "100%",
                 height: "100%",
                 background: "rgba(13, 10, 15, 0.6)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
               }}
-            >
-              <div className="play-btn">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M5 3l10 6-10 6V3z" fill="#080a0f" />
-                </svg>
-              </div>
-            </div>
-            <div className="hero-img-badge">Showreel 2025</div>
+            />
+            <div className="hero-img-badge">{label}</div>
           </div>
-          {[
-            {
-              label: "Documentary",
-              src: '/images/a picture of recording at one acre fund.png',
-            },
-            {
-              label: "Photography",
-              src: '/images/a picture of a big camera.png',
-            },
-            {
-              label: "Conference",
-              src: '/images/a thumbnail for Africa CEO Forum (ACF), Opening Video.png',
-            },
-          ].map(({ label, src }) => (
-            <div key={label} className="hero-img" style={{
-              backgroundImage: `url('${src}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}>
-              <div style={{ width: "100%", height: "100%", background: "rgba(13, 10, 15, 0.6)" }} />
-              <div className="hero-img-badge">{label}</div>
-            </div>
-          ))}
-        </div>
+        ))}
+      </div>
     </section>
   );
 };
