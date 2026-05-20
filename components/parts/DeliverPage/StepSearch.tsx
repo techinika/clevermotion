@@ -39,9 +39,9 @@ export function StepSearch({ initialEmail, initialAsset, onFound }: StepSearchPr
     <div className="anim-fadein max-w-xl mx-auto">
       <div className="text-center mb-10 anim-fadeup">
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-6 relative"
-          style={{ background: "rgba(232,160,32,0.1)", border: "1px solid rgba(232,160,32,0.2)" }}>
-          <span className="text-[#E8A020]"><Icon.Mail /></span>
-          <span className="absolute inset-0 rounded-full" style={{ border: "1px solid rgba(232,160,32,.3)", animation: "pulse-ring 2.5s ease-out infinite" }} />
+          style={{ background: "rgba(229,9,20,0.1)", border: "1px solid rgba(229,9,20,0.2)" }}>
+          <span className="text-[#E50914]"><Icon.Mail /></span>
+          <span className="absolute inset-0 rounded-full" style={{ border: "1px solid rgba(229,9,20,.3)", animation: "pulse-ring 2.5s ease-out infinite" }} />
         </div>
         <h2 className="font-display text-3xl font-black text-white mb-3">Access Your Delivery</h2>
         <p className="font-body text-sm leading-relaxed" style={{ color: "rgba(245,240,235,.5)" }}>
@@ -52,7 +52,7 @@ export function StepSearch({ initialEmail, initialAsset, onFound }: StepSearchPr
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="anim-fadeup d-1">
-          <label className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase block mb-2" style={{ color: "rgba(232,160,32,.7)" }}>
+          <label className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase block mb-2" style={{ color: "rgba(229,9,20,.7)" }}>
             Your Email Address
           </label>
           <input
@@ -65,7 +65,7 @@ export function StepSearch({ initialEmail, initialAsset, onFound }: StepSearchPr
         </div>
 
         <div className="anim-fadeup d-2">
-          <label className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase block mb-2" style={{ color: "rgba(232,160,32,.7)" }}>
+          <label className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase block mb-2" style={{ color: "rgba(229,9,20,.7)" }}>
             Project ID
           </label>
           <input
@@ -90,14 +90,14 @@ export function StepSearch({ initialEmail, initialAsset, onFound }: StepSearchPr
 
         <button type="submit" disabled={loading}
           className="anim-fadeup d-3 flex items-center justify-center gap-2.5 w-full py-3.5 rounded-lg font-body font-semibold text-sm transition-all mt-1"
-          style={{ background: loading ? "rgba(232,160,32,.5)" : "#E8A020", color: "#080a0f", cursor: loading ? "not-allowed" : "pointer" }}>
+          style={{ background: loading ? "rgba(229,9,20,.5)" : "#E50914", color: "#080a0f", cursor: loading ? "not-allowed" : "pointer" }}>
           {loading ? <><Icon.Spinner /> Looking up your project…</> : <><Icon.Arrow /> Continue to Verification</>}
         </button>
       </form>
 
       <div className="mt-10 rounded-xl p-5 anim-fadeup d-4"
         style={{ background: "#111827", border: "1px solid rgba(255,255,255,.07)" }}>
-        <p className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase mb-4" style={{ color: "rgba(232,160,32,.6)" }}>How delivery works</p>
+        <p className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase mb-4" style={{ color: "rgba(229,9,20,.6)" }}>How delivery works</p>
         <div className="flex flex-col gap-4">
           {[
             ["01", "We email you", "When your project is ready, you'll receive a delivery notification with your Project ID and a unique access code."],
@@ -105,7 +105,7 @@ export function StepSearch({ initialEmail, initialAsset, onFound }: StepSearchPr
             ["03", "Download your files", "All your deliverables are available for download for 30 days after delivery."],
           ].map(([n, t, d]) => (
             <div key={n} className="flex gap-4">
-              <div className="font-mono-cm text-[0.8rem] font-bold flex-shrink-0 mt-0.5" style={{ color: "rgba(232,160,32,.4)" }}>{n}</div>
+              <div className="font-mono-cm text-[0.8rem] font-bold flex-shrink-0 mt-0.5" style={{ color: "rgba(229,9,20,.4)" }}>{n}</div>
               <div>
                 <p className="font-body text-sm font-semibold text-white mb-0.5">{t}</p>
                 <p className="font-body text-[0.82rem] leading-relaxed" style={{ color: "rgba(245,240,235,.42)" }}>{d}</p>

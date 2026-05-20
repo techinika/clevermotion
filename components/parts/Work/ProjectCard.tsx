@@ -18,7 +18,7 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
         card-shimmer group relative cursor-pointer overflow-hidden rounded-xl
         border border-white/[0.07] bg-[#111827]
         transition-all duration-500
-        hover:border-[#E8A020]/30 hover:shadow-2xl hover:shadow-[#E8A020]/5
+        hover:border-[#E50914]/30 hover:shadow-2xl hover:shadow-[#E50914]/5
         hover:-translate-y-1
         anim-fadeup
         ${isWide ? "col-span-2" : ""}
@@ -28,9 +28,8 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
     >
       {/* thumbnail */}
       <div
-        className="w-full overflow-hidden"
+        className={`w-full overflow-hidden ${isTall ? "h-[350px] md:h-[520px]" : "h-[240px]"}`}
         style={{
-          height: isTall ? "520px" : "240px",
           backgroundImage: project.thumbnail.src ? `url('${project.thumbnail.src}')` : undefined,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -55,7 +54,7 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
         {/* featured badge */}
         {project.featured && (
           <div className="absolute top-3 right-3 z-10">
-            <span className="font-mono-cm text-[0.58rem] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full bg-[#E8A020]/90 text-[#080a0f]">
+            <span className="font-mono-cm text-[0.58rem] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full bg-[#E50914]/90 text-[#080a0f]">
               Featured
             </span>
           </div>
@@ -63,7 +62,7 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
         {/* hover overlay */}
         <div className="absolute inset-0 bg-[#080a0f]/0 group-hover:bg-[#080a0f]/30 transition-all duration-500 flex items-center justify-center">
           <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-            <div className="flex items-center gap-2 bg-[#E8A020] text-[#080a0f] font-body font-semibold text-sm px-5 py-2.5 rounded-full">
+            <div className="flex items-center gap-2 bg-[#E50914] text-[#080a0f] font-body font-semibold text-sm px-5 py-2.5 rounded-full">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path
                   d="M2 7h10M7 2l5 5-5 5"
@@ -82,7 +81,7 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
       {/* card body */}
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
-          <span className="font-mono-cm text-[0.58rem] tracking-[0.18em] uppercase text-[#E8A020]/70">
+          <span className="font-mono-cm text-[0.58rem] tracking-[0.18em] uppercase text-[#E50914]/70">
             {project.client}
           </span>
           <span className="w-px h-3 bg-white/10" />
@@ -90,7 +89,7 @@ export function ProjectCard({ project, onClick, index }: ProjectCardProps) {
             {project.year}
           </span>
         </div>
-        <h3 className="font-display text-xl font-bold text-white leading-tight mb-1 group-hover:text-[#E8A020] transition-colors duration-300">
+        <h3 className="font-display text-xl font-bold text-white leading-tight mb-1 group-hover:text-[#E50914] transition-colors duration-300">
           {project.title}
         </h3>
         <p className="font-body text-sm text-white/50 mb-4">

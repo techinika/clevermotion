@@ -58,7 +58,7 @@ export async function POST(request: Request) {
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #E8A020; color: #080a0f; padding: 20px; border-radius: 8px 8px 0 0; }
+          .header { background: #E50914; color: #080a0f; padding: 20px; border-radius: 8px 8px 0 0; }
           .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; }
           .field { margin-bottom: 15px; }
           .label { font-weight: bold; color: #666; }

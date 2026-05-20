@@ -53,21 +53,21 @@ function SubscribeModal({ tool, onClose }: { tool: Tool; onClose: () => void }) 
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
-        <div className="relative bg-[#111827] border border-[#E8A020]/30 rounded-2xl p-8 max-w-md w-full text-center anim-fadein">
+        <div className="relative bg-[#111827] border border-[#E50914]/30 rounded-2xl p-8 max-w-md w-full text-center anim-fadein">
           <button onClick={onClose} className="absolute top-4 right-4 text-white/40 hover:text-white">
             <X className="w-5 h-5" />
           </button>
-          <div className="w-16 h-16 rounded-full bg-[#E8A020]/20 flex items-center justify-center mx-auto mb-4">
-            <Check className="w-8 h-8 text-[#E8A020]" />
+          <div className="w-16 h-16 rounded-full bg-[#E50914]/20 flex items-center justify-center mx-auto mb-4">
+            <Check className="w-8 h-8 text-[#E50914]" />
           </div>
           <h3 className="font-display text-2xl font-bold text-white mb-2">You're in!</h3>
           <p className="text-white/60 mb-6">
-            Check your inbox for <strong className="text-[#E8A020]">{formData.email}</strong> to download your free resource.
+            Check your inbox for <strong className="text-[#E50914]">{formData.email}</strong> to download your free resource.
           </p>
           <a
             href={tool.downloadUrl}
             download
-            className="inline-flex items-center gap-2 bg-[#E8A020] text-[#080a0f] font-semibold px-6 py-3 rounded-lg hover:bg-[#f5c842] transition-colors"
+            className="inline-flex items-center gap-2 bg-[#E50914] text-[#080a0f] font-semibold px-6 py-3 rounded-lg hover:bg-[#FF3B3B] transition-colors"
           >
             <Download className="w-4 h-4" />
             Download Now
@@ -86,8 +86,8 @@ function SubscribeModal({ tool, onClose }: { tool: Tool; onClose: () => void }) 
         </button>
         
         <div className="text-center mb-6">
-          <div className="w-12 h-12 rounded-xl bg-[#E8A020]/10 flex items-center justify-center mx-auto mb-3">
-            <tool.icon className="w-6 h-6 text-[#E8A020]" />
+          <div className="w-12 h-12 rounded-xl bg-[#E50914]/10 flex items-center justify-center mx-auto mb-3">
+            <tool.icon className="w-6 h-6 text-[#E50914]" />
           </div>
           <h3 className="font-display text-2xl font-bold text-white mb-1">Get Your Free Resource</h3>
           <p className="text-white/50 text-sm">Enter your details to download {tool.title}</p>
@@ -101,7 +101,7 @@ function SubscribeModal({ tool, onClose }: { tool: Tool; onClose: () => void }) 
                 type="text"
                 placeholder="First Name *"
                 required
-                className="w-full bg-[#0d1117] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder-white/30 focus:border-[#E8A020] focus:outline-none"
+                className="w-full bg-[#0d1117] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder-white/30 focus:border-[#E50914] focus:outline-none"
                 value={formData.firstName}
                 onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
               />
@@ -114,7 +114,7 @@ function SubscribeModal({ tool, onClose }: { tool: Tool; onClose: () => void }) 
                 type="email"
                 placeholder="Email Address *"
                 required
-                className="w-full bg-[#0d1117] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder-white/30 focus:border-[#E8A020] focus:outline-none"
+                className="w-full bg-[#0d1117] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder-white/30 focus:border-[#E50914] focus:outline-none"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
@@ -126,7 +126,7 @@ function SubscribeModal({ tool, onClose }: { tool: Tool; onClose: () => void }) 
               <input
                 type="tel"
                 placeholder="Phone Number (optional)"
-                className="w-full bg-[#0d1117] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder-white/30 focus:border-[#E8A020] focus:outline-none"
+                className="w-full bg-[#0d1117] border border-white/10 rounded-lg py-3 pl-10 pr-4 text-white placeholder-white/30 focus:border-[#E50914] focus:outline-none"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
@@ -136,7 +136,7 @@ function SubscribeModal({ tool, onClose }: { tool: Tool; onClose: () => void }) 
           <button
             type="submit"
             disabled={isSubmitting || !formData.firstName || !formData.email}
-            className="w-full bg-[#E8A020] text-[#080a0f] font-semibold py-3 rounded-lg hover:bg-[#f5c842] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-[#E50914] text-[#080a0f] font-semibold py-3 rounded-lg hover:bg-[#FF3B3B] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <span className="animate-pulse">Processing...</span>
@@ -185,7 +185,7 @@ export const FreeTools = () => {
               </div>
               <button 
                 onClick={() => setSelectedTool(t)}
-                className="tool-dl w-5 h-5 hover:text-[#E8A020] transition-colors cursor-pointer"
+                className="tool-dl w-5 h-5 hover:text-[#E50914] transition-colors cursor-pointer"
               />
             </div>
           ))}

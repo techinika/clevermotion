@@ -49,7 +49,7 @@ export default function DeliverPage() {
             href="/"
             className="inline-flex items-center gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-sm font-body"
             style={{ color: "rgba(245,240,235,.4)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#E8A020")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#E50914")}
             onMouseLeave={(e) =>
               (e.currentTarget.style.color = "rgba(245,240,235,.4)")
             }
