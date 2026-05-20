@@ -16,9 +16,9 @@ export function Modal({ isOpen, onClose, type = "info", title, message, confirmT
   if (!isOpen) return null;
 
   const icons = {
-    success: <CheckCircle2 className="w-12 h-12 text-[#E8A020]" />,
+    success: <CheckCircle2 className="w-12 h-12 text-[#E50914]" />,
     error: <AlertCircle className="w-12 h-12 text-red-400" />,
-    info: <CheckCircle2 className="w-12 h-12 text-[#E8A020]" />,
+    info: <CheckCircle2 className="w-12 h-12 text-[#E50914]" />,
   };
 
   return (
@@ -41,7 +41,7 @@ export function Modal({ isOpen, onClose, type = "info", title, message, confirmT
             {onConfirm && confirmText && (
               <button
                 onClick={onConfirm}
-                className="bg-[#E8A020] text-[#080a0f] font-body font-semibold px-6 py-2.5 rounded-lg hover:bg-[#f5c842] transition-colors"
+                className="bg-[#E50914] text-[#080a0f] font-body font-semibold px-6 py-2.5 rounded-lg hover:bg-[#FF3B3B] transition-colors"
               >
                 {confirmText}
               </button>
@@ -66,9 +66,9 @@ interface ToastProps {
 
 export function Toast({ message, type = "success" }: ToastProps) {
   const icons = {
-    success: <CheckCircle2 className="w-5 h-5 text-[#E8A020]" />,
+    success: <CheckCircle2 className="w-5 h-5 text-[#E50914]" />,
     error: <AlertCircle className="w-5 h-5 text-red-400" />,
-    info: <CheckCircle2 className="w-5 h-5 text-[#E8A020]" />,
+    info: <CheckCircle2 className="w-5 h-5 text-[#E50914]" />,
   };
 
   return (

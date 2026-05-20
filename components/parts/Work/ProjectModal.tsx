@@ -170,7 +170,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <button
                   key={i}
                   onClick={() => setSlide(i)}
-                  className={`flex-shrink-0 rounded-lg overflow-hidden transition-all duration-200 ${i === slide ? "ring-2 ring-[#E8A020] ring-offset-1 ring-offset-[#0d1117]" : "opacity-50 hover:opacity-80"}`}
+                  className={`flex-shrink-0 rounded-lg overflow-hidden transition-all duration-200 ${i === slide ? "ring-2 ring-[#E50914] ring-offset-1 ring-offset-[#0d1117]" : "opacity-50 hover:opacity-80"}`}
                   style={{ 
                     width: 80, 
                     height: 52, 
@@ -184,7 +184,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* deliverables */}
             <div className="p-8 border-b border-white/[0.06]">
-              <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E8A020] mb-4">
+              <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E50914] mb-4">
                 Deliverables
               </p>
               <div className="flex flex-wrap gap-2">
@@ -193,7 +193,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     key={d}
                     className="flex items-center gap-1.5 font-body text-sm text-white/70 bg-white/[0.05] border border-white/[0.07] px-3.5 py-1.5 rounded-lg"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8A020] flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E50914] flex-shrink-0" />
                     {d}
                   </span>
                 ))}
@@ -203,7 +203,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* video section */}
             {project.videoUrl && (
               <div className="p-8 border-b border-white/[0.06]">
-                <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E8A020] mb-4">
+                <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E50914] mb-4">
                   Video
                 </p>
                 <video
@@ -219,7 +219,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* impact row */}
             <div className="p-8">
-              <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E8A020] mb-5">
+              <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E50914] mb-5">
                 Impact
               </p>
               <div className="grid grid-cols-2 gap-3">
@@ -229,7 +229,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     className="flex items-start gap-2.5 font-body text-sm text-white/60"
                   >
                     <svg
-                      className="mt-0.5 flex-shrink-0 text-[#E8A020]"
+                      className="mt-0.5 flex-shrink-0 text-[#E50914]"
                       width="14"
                       height="14"
                       viewBox="0 0 14 14"
@@ -254,7 +254,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="border-l border-white/[0.06] flex flex-col">
             <div className="p-8 flex-1 overflow-y-auto hide-scroll">
               <div className="anim-fadeup">
-                <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E8A020]/70 mb-3">
+                <p className="font-mono-cm text-[0.6rem] tracking-[0.2em] uppercase text-[#E50914]/70 mb-3">
                   {project.client}
                 </p>
                 <h2 className="font-display text-3xl font-black text-white leading-tight mb-1">
@@ -295,8 +295,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   className={`mb-6 anim-fadeup delay-${(i + 1) * 100}`}
                 >
                   <div className="flex items-center gap-2 mb-2.5">
-                    <span className="w-5 h-px bg-[#E8A020]" />
-                    <p className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase text-[#E8A020]">
+                    <span className="w-5 h-px bg-[#E50914]" />
+                    <p className="font-mono-cm text-[0.6rem] tracking-[0.18em] uppercase text-[#E50914]">
                       {label}
                     </p>
                   </div>
@@ -324,7 +324,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <a
                 href="#contact"
                 onClick={close}
-                className="flex items-center justify-center gap-2 w-full bg-[#E8A020] hover:bg-[#f5c842] text-[#080a0f] font-body font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors duration-200"
+                className="flex items-center justify-center gap-2 w-full bg-[#E50914] hover:bg-[#FF3B3B] text-[#080a0f] font-body font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors duration-200"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path

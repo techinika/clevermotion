@@ -67,7 +67,7 @@ function StatCard({
   label,
   value,
   sub,
-  color = "#E8A020",
+  color = "#E50914",
   delay = "",
 }: {
   label: string;
@@ -86,7 +86,7 @@ function StatCard({
     >
       <p
         className="font-mono-cm text-[.58rem] tracking-[.18em] uppercase mb-3"
-        style={{ color: "rgba(232,160,32,.6)" }}
+        style={{ color: "rgba(229,9,20,.6)" }}
       >
         {label}
       </p>
@@ -197,7 +197,7 @@ function DashboardView({
       <div className="mb-8">
         <p
           className="font-mono-cm text-[.6rem] tracking-[.2em] uppercase mb-1"
-          style={{ color: "rgba(232,160,32,.7)" }}
+          style={{ color: "rgba(229,9,20,.7)" }}
         >
           Overview
         </p>
@@ -251,13 +251,13 @@ function DashboardView({
         >
           <p
             className="font-mono-cm text-[.6rem] tracking-[.18em] uppercase mb-5"
-            style={{ color: "rgba(232,160,32,.6)" }}
+            style={{ color: "rgba(229,9,20,.6)" }}
           >
             Project Pipeline
           </p>
           <div className="flex flex-col gap-4">
             {[
-              ["In Progress", inProgress, projects.length, "#E8A020"],
+              ["In Progress", inProgress, projects.length, "#E50914"],
               ["Ready", ready, projects.length, "#38bdf8"],
               ["Delivered", delivered, projects.length, "#34d399"],
             ].map(([l, v, t, c]) => (
@@ -302,7 +302,7 @@ function DashboardView({
         >
           <p
             className="font-mono-cm text-[.6rem] tracking-[.18em] uppercase mb-4"
-            style={{ color: "rgba(232,160,32,.6)" }}
+            style={{ color: "rgba(229,9,20,.6)" }}
           >
             Recent Customers
           </p>
@@ -315,8 +315,8 @@ function DashboardView({
                   <div
                     className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 font-display text-xs font-bold"
                     style={{
-                      background: "rgba(232,160,32,.12)",
-                      color: "#E8A020",
+                      background: "rgba(229,9,20,.12)",
+                      color: "#E50914",
                     }}
                   >
                     {c.name[0]}
@@ -352,7 +352,7 @@ function DashboardView({
       >
         <p
           className="font-mono-cm text-[.6rem] tracking-[.18em] uppercase mb-5"
-          style={{ color: "rgba(232,160,32,.6)" }}
+          style={{ color: "rgba(229,9,20,.6)" }}
         >
           Recent Activity
         </p>
@@ -453,7 +453,7 @@ function CustomersView({
         <div>
           <p
             className="font-mono-cm text-[.6rem] tracking-[.2em] uppercase mb-1"
-            style={{ color: "rgba(232,160,32,.7)" }}
+            style={{ color: "rgba(229,9,20,.7)" }}
           >
             Management
           </p>
@@ -521,8 +521,8 @@ function CustomersView({
                       <div
                         className="w-8 h-8 rounded-full flex items-center justify-center font-display text-sm font-bold flex-shrink-0"
                         style={{
-                          background: "rgba(232,160,32,.12)",
-                          color: "#E8A020",
+                          background: "rgba(229,9,20,.12)",
+                          color: "#E50914",
                         }}
                       >
                         {c.name[0]}
@@ -555,7 +555,7 @@ function CustomersView({
                   <td className="px-5 py-4">
                     <span
                       className="font-display text-base font-bold"
-                      style={{ color: "#E8A020" }}
+                      style={{ color: "#E50914" }}
                     >
                       {cProjects.length}
                     </span>
@@ -616,7 +616,7 @@ function CustomersView({
               <div key={key}>
                 <label
                   className="font-mono-cm text-[.58rem] tracking-[.16em] uppercase block mb-1.5"
-                  style={{ color: "rgba(232,160,32,.65)" }}
+                  style={{ color: "rgba(229,9,20,.65)" }}
                 >
                   {label}
                 </label>
@@ -801,7 +801,7 @@ function ProjectsView({
               className="flex items-center gap-1.5 font-mono-cm text-[.58rem] tracking-[.14em] uppercase mb-2 transition-colors"
               style={{ color: "rgba(245,240,235,.3)" }}
               onClick={() => setSelectedCustomer(null)}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#E8A020")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#E50914")}
               onMouseLeave={(e) =>
                 (e.currentTarget.style.color = "rgba(245,240,235,.3)")
               }
@@ -811,7 +811,7 @@ function ProjectsView({
           )}
           <p
             className="font-mono-cm text-[.6rem] tracking-[.2em] uppercase mb-1"
-            style={{ color: "rgba(232,160,32,.7)" }}
+            style={{ color: "rgba(229,9,20,.7)" }}
           >
             {selectedCustomer ? selectedCustomer.name : "All Customers"}
           </p>
@@ -846,9 +846,9 @@ function ProjectsView({
             onClick={() => setFilter(f)}
             className="font-mono-cm text-[.6rem] tracking-[.14em] uppercase px-4 py-2.5 rounded-lg border transition-all"
             style={{
-              background: filter === f ? "#E8A020" : "transparent",
+              background: filter === f ? "#E50914" : "transparent",
               color: filter === f ? "#080a0f" : "rgba(245,240,235,.4)",
-              border: `1px solid ${filter === f ? "#E8A020" : "rgba(255,255,255,.09)"}`,
+              border: `1px solid ${filter === f ? "#E50914" : "rgba(255,255,255,.09)"}`,
               cursor: "pointer",
             }}
           >
@@ -900,7 +900,7 @@ function ProjectsView({
               <div className="p-4">
                 <p
                   className="font-mono-cm text-[.58rem] tracking-[.14em] uppercase mb-1.5"
-                  style={{ color: "rgba(232,160,32,.6)" }}
+                  style={{ color: "rgba(229,9,20,.6)" }}
                 >
                   {customerName(p.customerId)}
                 </p>
@@ -934,7 +934,7 @@ function ProjectsView({
                         {l}
                       </p>
                       <p
-                        className={`font-mono-cm text-[.72rem] font-bold ${l === "Code" ? "text-[#E8A020]" : "text-white"}`}
+                        className={`font-mono-cm text-[.72rem] font-bold ${l === "Code" ? "text-[#E50914]" : "text-white"}`}
                       >
                         {v}
                       </p>
@@ -1000,7 +1000,7 @@ function ProjectsView({
             <div>
               <label
                 className="font-mono-cm text-[.58rem] tracking-[.16em] uppercase block mb-1.5"
-                style={{ color: "rgba(232,160,32,.65)" }}
+                style={{ color: "rgba(229,9,20,.65)" }}
               >
                 Customer *
               </label>
@@ -1031,7 +1031,7 @@ function ProjectsView({
               <div key={key}>
                 <label
                   className="font-mono-cm text-[.58rem] tracking-[.16em] uppercase block mb-1.5"
-                  style={{ color: "rgba(232,160,32,.65)" }}
+                  style={{ color: "rgba(229,9,20,.65)" }}
                 >
                   {label}
                 </label>
@@ -1049,7 +1049,7 @@ function ProjectsView({
             <div>
               <label
                 className="font-mono-cm text-[.58rem] tracking-[.16em] uppercase block mb-1.5"
-                style={{ color: "rgba(232,160,32,.65)" }}
+                style={{ color: "rgba(229,9,20,.65)" }}
               >
                 Category
               </label>
@@ -1074,7 +1074,7 @@ function ProjectsView({
             <div>
               <label
                 className="font-mono-cm text-[.58rem] tracking-[.16em] uppercase block mb-1.5"
-                style={{ color: "rgba(232,160,32,.65)" }}
+                style={{ color: "rgba(229,9,20,.65)" }}
               >
                 Delivery Note (shown to client)
               </label>
@@ -1268,7 +1268,7 @@ function DeliverablesView({
         <div className="mb-8">
           <p
             className="font-mono-cm text-[.6rem] tracking-[.2em] uppercase mb-1"
-            style={{ color: "rgba(232,160,32,.7)" }}
+            style={{ color: "rgba(229,9,20,.7)" }}
           >
             Files
           </p>
@@ -1314,7 +1314,7 @@ function DeliverablesView({
           setSelectedProject(null);
           setView("projects");
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = "#E8A020")}
+        onMouseEnter={(e) => (e.currentTarget.style.color = "#E50914")}
         onMouseLeave={(e) =>
           (e.currentTarget.style.color = "rgba(245,240,235,.3)")
         }
@@ -1331,7 +1331,7 @@ function DeliverablesView({
           <div>
             <p
               className="font-mono-cm text-[.58rem] tracking-[.14em] uppercase mb-1"
-              style={{ color: "rgba(232,160,32,.6)" }}
+              style={{ color: "rgba(229,9,20,.6)" }}
             >
               {customer?.name} · {project.category}
             </p>
@@ -1350,7 +1350,7 @@ function DeliverablesView({
           ["Files", project.files.length, "text-white"],
           ["Client Accesses", accessCount, "text-violet-400"],
           ["Downloads", downloadCount, "text-sky-400"],
-          ["Access Code", project.code, "text-[#E8A020]"],
+          ["Access Code", project.code, "text-[#E50914]"],
         ].map(([l, v, c]) => (
           <div
             key={l}
@@ -1374,14 +1374,14 @@ function DeliverablesView({
       <div
         className="rounded-xl p-4 mb-6 flex items-center justify-between gap-4 flex-wrap"
         style={{
-          background: "rgba(232,160,32,.05)",
-          border: "1px solid rgba(232,160,32,.15)",
+          background: "rgba(229,9,20,.05)",
+          border: "1px solid rgba(229,9,20,.15)",
         }}
       >
         <div>
           <p
             className="font-mono-cm text-[.58rem] tracking-[.16em] uppercase mb-0.5"
-            style={{ color: "rgba(232,160,32,.65)" }}
+            style={{ color: "rgba(229,9,20,.65)" }}
           >
             Client Delivery
           </p>
@@ -1430,7 +1430,7 @@ function DeliverablesView({
         <div>
           <p
             className="font-mono-cm text-[.6rem] tracking-[.18em] uppercase mb-4"
-            style={{ color: "rgba(232,160,32,.7)" }}
+            style={{ color: "rgba(229,9,20,.7)" }}
           >
             Files · {project.files.length}
           </p>
@@ -1469,11 +1469,11 @@ function DeliverablesView({
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3"
                   style={{
-                    background: "rgba(232,160,32,.1)",
-                    border: "1px solid rgba(232,160,32,.2)",
+                    background: "rgba(229,9,20,.1)",
+                    border: "1px solid rgba(229,9,20,.2)",
                   }}
                 >
-                  <span style={{ color: "#E8A020" }}>
+                  <span style={{ color: "#E50914" }}>
                     <Ic.Upload />
                   </span>
                 </div>
@@ -1567,7 +1567,7 @@ function DeliverablesView({
         <div>
           <p
             className="font-mono-cm text-[.6rem] tracking-[.18em] uppercase mb-4"
-            style={{ color: "rgba(232,160,32,.7)" }}
+            style={{ color: "rgba(229,9,20,.7)" }}
           >
             Access Log · {project.accessLog.length} events
           </p>
@@ -1649,7 +1649,7 @@ function DeliverablesView({
               style={{ color: "rgba(245,240,235,.5)" }}
             >
               The current code{" "}
-              <strong style={{ color: "#E8A020" }}>{project.code}</strong> will
+              <strong style={{ color: "#E50914" }}>{project.code}</strong> will
               be invalidated.
             </p>
             <p
@@ -1713,7 +1713,7 @@ function ActivityView({
       <div className="mb-8">
         <p
           className="font-mono-cm text-[.6rem] tracking-[.2em] uppercase mb-1"
-          style={{ color: "rgba(232,160,32,.7)" }}
+          style={{ color: "rgba(229,9,20,.7)" }}
         >
           Monitoring
         </p>
@@ -1758,7 +1758,7 @@ function ActivityView({
         >
           <p
             className="font-mono-cm text-[.6rem] tracking-[.18em] uppercase"
-            style={{ color: "rgba(232,160,32,.6)" }}
+            style={{ color: "rgba(229,9,20,.6)" }}
           >
             All Events · {allEvents.length}
           </p>
@@ -1798,7 +1798,7 @@ function ActivityView({
                 <div className="flex items-center gap-2 mt-0.5 flex-wrap">
                   <p
                     className="font-mono-cm text-[.58rem] tracking-wide"
-                    style={{ color: "rgba(232,160,32,.6)" }}
+                    style={{ color: "rgba(229,9,20,.6)" }}
                   >
                     {a.projectTitle}
                   </p>
@@ -1897,17 +1897,17 @@ export default function AdminPage() {
               className="font-display text-base font-bold text-white flex items-center gap-2"
             >
               <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
-                <rect x="2" y="2" width="9" height="22" rx="1" fill="#E8A020" />
+                <rect x="2" y="2" width="9" height="22" rx="1" fill="#E50914" />
                 <rect
                   x="15"
                   y="2"
                   width="9"
                   height="14"
                   rx="1"
-                  fill="rgba(232,160,32,0.38)"
+                  fill="rgba(229,9,20,0.38)"
                 />
               </svg>
-              Clléver<span style={{ color: "#E8A020" }}>motion</span>
+              Clléver<span style={{ color: "#E50914" }}>motion</span>
             </Link>
             <div className="flex items-center gap-1.5 mt-2">
               <span
@@ -1972,7 +1972,7 @@ export default function AdminPage() {
             <div className="flex items-center gap-2.5 mt-3 px-2">
               <div
                 className="w-7 h-7 rounded-full flex items-center justify-center font-display text-xs font-bold"
-                style={{ background: "rgba(232,160,32,.15)", color: "#E8A020" }}
+                style={{ background: "rgba(229,9,20,.15)", color: "#E50914" }}
               >
                 A
               </div>
@@ -2012,7 +2012,7 @@ export default function AdminPage() {
                   {i > 0 && (
                     <span style={{ color: "rgba(245,240,235,.15)" }}>/</span>
                   )}
-                  <span style={{ color: i === 1 ? "#E8A020" : undefined }}>
+                  <span style={{ color: i === 1 ? "#E50914" : undefined }}>
                     {s}
                   </span>
                 </span>

@@ -8,7 +8,7 @@ export const FontLoader = () => (
 
     ::-webkit-scrollbar       { width: 4px; }
     ::-webkit-scrollbar-track { background: #080a0f; }
-    ::-webkit-scrollbar-thumb { background: #E8A020; border-radius: 2px; }
+    ::-webkit-scrollbar-thumb { background: #E50914; border-radius: 2px; }
 
     body::before {
       content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.28;
@@ -60,16 +60,16 @@ export const FontLoader = () => (
       font-weight: 700;
       color: #f5f0eb;
       outline: none;
-      caret-color: #E8A020;
+      caret-color: #E50914;
       transition: border-color .2s, box-shadow .2s, background .2s;
     }
     .otp-input:focus {
-      border-color: #E8A020;
-      box-shadow: 0 0 0 3px rgba(232,160,32,.15);
+      border-color: #E50914;
+      box-shadow: 0 0 0 3px rgba(229,9,20,.15);
       background: #161f2e;
     }
     .otp-input.filled {
-      border-color: rgba(232,160,32,.45);
+      border-color: rgba(229,9,20,.45);
       background: #131b2e;
     }
     .otp-input.error {
@@ -83,7 +83,7 @@ export const FontLoader = () => (
       position:absolute;
       left:0; right:0;
       height:8%;
-      background: linear-gradient(transparent, rgba(232,160,32,.06), transparent);
+      background: linear-gradient(transparent, rgba(229,9,20,.06), transparent);
       animation: scanline 2.5s linear 1;
       pointer-events:none;
     }
@@ -91,13 +91,13 @@ export const FontLoader = () => (
     .pattern-border {
       background: repeating-linear-gradient(
         45deg, transparent 0 8px,
-        rgba(232,160,32,.07) 8px 9px
+        rgba(229,9,20,.07) 8px 9px
       );
-      border-right: 1px solid rgba(232,160,32,.11);
+      border-right: 1px solid rgba(229,9,20,.11);
     }
 
     .file-row { transition: background .2s, border-color .2s; }
-    .file-row:hover { background: rgba(232,160,32,.04); border-color: rgba(232,160,32,.22); }
+    .file-row:hover { background: rgba(229,9,20,.04); border-color: rgba(229,9,20,.22); }
 
     .cm-input {
       background: #111827;
@@ -111,7 +111,7 @@ export const FontLoader = () => (
       width: 100%;
       transition: border-color .2s, box-shadow .2s;
     }
-    .cm-input:focus { border-color: #E8A020; box-shadow: 0 0 0 3px rgba(232,160,32,.12); }
+    .cm-input:focus { border-color: #E50914; box-shadow: 0 0 0 3px rgba(229,9,20,.12); }
     .cm-input::placeholder { color: rgba(245,240,235,.3); }
     .cm-input.error { border-color: #e55; }
   `}</style>

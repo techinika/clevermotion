@@ -52,13 +52,13 @@ export default function PortfolioPage() {
         <Navbar scrolled={scrolled} />
 
         {/* ── HERO ── */}
-        <div className="relative pt-40 pb-20 px-14 overflow-hidden">
+        <div className="relative pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-14 overflow-hidden">
           {/* bg glow */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232,160,32,0.05) 0%, transparent 60%)",
+                "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(229,9,20,0.15) 0%, transparent 60%)",
             }}
           />
           {/* pattern strip */}
@@ -68,11 +68,11 @@ export default function PortfolioPage() {
             <div className="flex items-center gap-2 mb-6">
               <span
                 className="w-2 h-2 rounded-full"
-                style={{ background: "#E8A020" }}
+                style={{ background: "#E50914" }}
               />
               <span
                 className="font-mono-cm text-[0.62rem] tracking-[0.22em] uppercase"
-                style={{ color: "#E8A020" }}
+                style={{ color: "#E50914" }}
               >
                 Portfolio
               </span>
@@ -80,7 +80,7 @@ export default function PortfolioPage() {
             <h1 className="font-display text-6xl font-black leading-[1.04] text-white mb-6 anim-fadeup">
               Stories we've
               <br />
-              <em className="italic" style={{ color: "#E8A020" }}>
+              <em className="italic" style={{ color: "#E50914" }}>
                 designed & produced.
               </em>
             </h1>
@@ -107,7 +107,7 @@ export default function PortfolioPage() {
                 <div key={l}>
                   <div
                     className="font-display text-2xl font-bold"
-                    style={{ color: "#E8A020" }}
+                    style={{ color: "#E50914" }}
                   >
                     {n}
                   </div>
@@ -125,14 +125,14 @@ export default function PortfolioPage() {
 
         {/* ── FILTER TABS ── */}
         <div
-          className="sticky top-[65px] z-30 px-14 py-4 border-b"
+          className="sticky top-[73px] z-30 px-6 md:px-14 py-4 border-b"
           style={{
             background: "rgba(8,10,15,0.95)",
             backdropFilter: "blur(16px)",
             borderColor: "rgba(255,255,255,0.06)",
           }}
         >
-          <div className="flex items-center gap-2 overflow-x-auto hide-scroll">
+          <div className="flex items-center gap-4 overflow-x-auto hide-scroll pb-2">
             {CATEGORIES.map((cat) => {
               const active = cat === activeCategory;
               return (
@@ -141,7 +141,7 @@ export default function PortfolioPage() {
                   onClick={() => setActiveCategory(cat)}
                   className={`flex-shrink-0 font-mono-cm text-[0.62rem] tracking-[0.16em] uppercase px-4 py-2 rounded-full border transition-all duration-200 ${
                     active
-                      ? "border-[#E8A020] text-[#080a0f] bg-[#E8A020]"
+                      ? "border-[#E50914] text-[#080a0f] bg-[#E50914]"
                       : "border-white/10 text-white/50 hover:border-white/25 hover:text-white/80"
                   }`}
                 >
@@ -160,7 +160,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* ── PROJECT GRID ── */}
-        <div className="px-14 py-14">
+        <div className="px-6 md:px-14 py-14">
           {filtered.length === 0 ? (
             <div className="text-center py-24 text-white/30 font-body">
               No projects in this category yet.
